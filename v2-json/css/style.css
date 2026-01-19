@@ -120,11 +120,36 @@ Pages
     /* .content-titleとimage-linkいずれかにホバーすると両方変化 */
     opacity: 0.7;
 }
+#index .menu-item:last-child .section {
+    /* 最後の.sectionには下線を引かない */
+    border-bottom: none;
+    color: #333631;
+}
+/* --- index > quote --- */
 .quote-box {
     font-family: "New Tegomin";
     padding: 40px;
-    border: 1px solid #333631;
+    border: 2px solid #333631;
+    background-image: url(../../img/washiBG.jpg);
     margin: 70px 80px 40px;
+}
+.quote-box button {
+    display: block;
+    margin: 20px auto 0;
+    font-family: "Zen Maru Gothic";
+    color: #333631;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border: 1px solid #333631;
+    border-radius: 18px;
+    background-color: #ffffff;
+    padding: 8px 20px;
+}
+.quote-box button:hover {
+    opacity: 0.8;
+}
+.quote-box button:active {
+    opacity: 0.6;
 }
 #quote {
     /* JSONファイルの/nを改行に変換 */
@@ -144,11 +169,6 @@ Pages
     font-size: 0.9rem;
     padding-left: 20px;
     color: #656b61;
-}
-#index .menu-item:last-child .section {
-    /* 最後の.sectionには下線を引かない */
-    border-bottom: none;
-    color: #333631;
 }
 
 /*--- 3dModels ---*/

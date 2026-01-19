@@ -42,19 +42,41 @@ if(select){                         /* selectが存在するページでのみ�
 /*-----------------------------------------------------
 JSONファイルから引用データの取得
 -----------------------------------------------------*/
-const quote = document.getElementById("quote");
-const author = document.getElementById("author");
-const source = document.getElementById("source");
 
-if(quote && author && source) {
-  fetch("../javascript/quoteData.json")
-  .then(response => response.json())
-  .then(data => {
-    const randomIndex = Math.floor(Math.random() * data.length);
-    const item = data[randomIndex];
+let lastIndex = -1;                 /* 同じ引用が連続で出るのを防止 */
 
-    quote.textContent = `” ${item.quote} ”`;
-    author.textContent = `- ${item.author}`;
-    source.textContent = item.source;
-  });
+function loadQuote() {
+  const quote = document.getElementById("quote");
+  const author = document.getElementById("author");
+  const source = document.getElementById("source");
+
+  let randomIndex;
+
+  if(quote && author && source) {
+    fetch("../javascript/quoteData.json")
+    .then(response => response.json())
+    .then(data => {
+      do {
+        randomIndex = Math.floor(Math.random() * data.length);
+      } while (randomIndex === lastIndex);
+
+      lastIndex = randomIndex;
+
+      const item = data[randomIndex];
+
+      quote.textContent = `” ${item.quote} ”`;
+      author.textContent = `- ${item.author}`;
+      source.textContent = item.source;
+    });
+  };
 }
+
+loadQuote();
+
+/*-----------------------------------------------------
+ボタンクリックで引用データの更新
+-----------------------------------------------------*/
+
+const reloadQuote = document.getElementById("reloadQuote");
+
+reloadQuote.addEventListener("click", loadQuote);

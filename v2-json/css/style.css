@@ -120,15 +120,16 @@ Pages
     /* .content-titleとimage-linkいずれかにホバーすると両方変化 */
     opacity: 0.7;
 }
-#randomQuote {
-    /* randomQuote内ではホバーとリンク無効化 */
-    pointer-events: none;
-}
-#randomQuote .section {
-    padding: 40px 100px 50px;
+.quote-box {
+    font-family: "New Tegomin";
+    padding: 40px;
+    border: 1px solid #333631;
+    margin: 70px 80px 40px;
 }
 #quote {
-    font-size: 1.05rem;
+    /* JSONファイルの/nを改行に変換 */
+    white-space: pre-line;
+    font-size: 1.1rem;
     font-style: italic;
     margin-bottom: 15px;
 }
@@ -136,13 +137,13 @@ Pages
     display: inline-block;
     padding-left: 20px;
     margin-bottom: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 #source {
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-left: 20px;
-    color: hsl(96, 5%, 40%);
+    color: #656b61;
 }
 #index .menu-item:last-child .section {
     /* 最後の.sectionには下線を引かない */
@@ -236,8 +237,12 @@ RWD
     #header li a {
         font-size: 0.9rem;
     }
-    #randomQuote .section {
-        padding: 40px 30px 50px;
+    .quote-box {
+        padding: 30px 23px;
+        margin: 30px 10px 10px;
+    }
+    #author {
+        margin-bottom: 5px;
     }
     .page-title {
         font-size: 1.7rem;

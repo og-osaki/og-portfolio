@@ -29,12 +29,22 @@ mediaQuery.addEventListener("change", triggerLogoText);
 /*-----------------------------------------------------
 selectメニューをページ内リンクにする
 -----------------------------------------------------*/
-const select = document.getElementById("modelChoice");
+const selectModel = document.getElementById("modelChoice");
 
-if(select){                         /* selectが存在するページでのみ動作（後続コードの停止を防ぐ） */
-  select.addEventListener("change", function() {
-    if(select.value) {
-      location.hash = select.value;
+if(selectModel){                         /* 存在するページでのみ動作（後続コードの停止を防ぐ） */
+  selectModel.addEventListener("change", function() {
+    if(selectModel.value) {
+      location.hash = selectModel.value;
+    }
+  });
+}
+
+const selectSection = document.getElementById("sectionChoice");
+
+if(selectSection){                         /* 存在するページでのみ動作（後続コードの停止を防ぐ） */
+  selectSection.addEventListener("change", function() {
+    if(selectSection.value) {
+      location.hash = selectSection.value;
     }
   });
 }

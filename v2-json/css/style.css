@@ -63,8 +63,9 @@ Layout
     padding: 0 20px;
 }
 .section {
-    padding: 40px 0 50px;
+    padding-bottom: 50px;
     border-bottom: 2px dotted #333631;
+    margin-bottom: 40px;
 }
 
 
@@ -191,11 +192,8 @@ Pages
 }
 
 /*--- other ---*/
-#other .page-title {
-    /* 最後の.sectionには下線を引かない */
-    margin-bottom: 0;
-}
 #other .section:last-child {
+    /* 最後の.sectionには下線を引かない */
     border-bottom: none;
 }
 .other-content {

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Other | ポートフォリオ</title>
+    <title>ポートフォリオ</title>
     <meta name="description" content="OGのポートフォリオです。Blender作品や雑多なコンテンツを掲載しています。">
     <link rel="icon" href="../../img/favicon.ico"> 
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=New+Tegomin&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 </head>
 
 <body id="other">
@@ -30,12 +30,31 @@
 
         <main>
             <h2 class="page-title">Other</h2>
+
+            <p class="outline">試作したコンテンツや写真など。</p>
+
+            <select id="sectionChoice" class="selector">
+                <option value="">コンテンツを選択</option>
+                <option value="#randomQuote">ランダム引用集</option>
+                <option value="#music">Music</option>
+                <option value="#visit">Visit</option>
+            </select>
+
+            <section id="randomQuote" class="section">
+                <div class="quote-box">
+                    <h2 class="content-title" id="quoteTitle">ランダム引用集</h2>
+                    <p id="quote"></p>
+                    <p id="author"></p>
+                    <p id="source"></p>
+                    <button type="button" id="reloadQuote">シャッフルする</button>
+                </div>
+            </section>
             
             <section id="music" class="section">
                 <h2 class="content-title">Music</h2>
                 <div class="other-content">
                     <h3 class="series-title">Studieシリーズ (2021年)</h3>
-                    <p class="music-series-outline">ギター一本にルーパーと数種類のエフェクトで遊びながら一発録りしたものです。ループするリフだけ決めておいて、あとは思い付きで演奏しています。いろんな意味で再現不可能...</p>
+                    <p class="music-series-outline">ギター一本にルーパーと数種類のエフェクトで遊びながら一発録りしたものです。ループするリフだけ決めておいて、あとは思い付きで演奏しています。</p>
                     <ul class="music-list">
                         <li>
                             <h4 class="music-title">Studie 1</h4>
@@ -46,13 +65,13 @@
                         <li>
                             <h4 class="music-title">Studie 4</h4>
                             <audio controls controlslist="nodownload" src="../../audio/Studie4.mp3"></audio>
-                            <p class="music-caption">なんちゃってダブです。一体どうやって作ったのか、奇妙なオルガンみたいな音が鳴っています。</p>
+                            <p class="music-caption">なんちゃってダブ。一体どうやって作ったのか、奇妙なオルガンみたいな音が鳴っています。</p>
                             <p class="division">&#x2736;</p>
                         </li>
                         <li>
                             <h4 class="music-title">Studie 6</h4>
                             <audio controls src="../../audio/Studie6.mp3"></audio>
-                            <p class="music-caption">いちばん「変な」ヴァージョンです。かっこよく言えばアンビエント・SF的な感覚。最後のほうはたまにしか音が鳴りません。</p>
+                            <p class="music-caption">いちばん「変な」ヴァージョン。かっこよく言えばアンビエント・SF的な感覚。最後のほうはたまにしか音が鳴りません。</p>
                         </li>
                     </ul>
                 </div>

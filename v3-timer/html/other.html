@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ</title>
+    <meta name="description" content="OGのポートフォリオです。Blender作品や雑多なコンテンツを掲載しています。">
+    <link rel="icon" href="../../img/favicon.ico"> 
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=New+Tegomin&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body id="other">
+    <div class="wrapper">
+        <header id="header">
+            <h1 class="site-title">
+                <a href="index.html" id="site-title-text">O.G.</a>
+            </h1>
+            
+            <nav>
+                <ul>
+                    <li><a href="3dModels.html">3D MODELS</a></li>
+                    <li><a href="other.html">OTHER</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2 class="page-title">Other</h2>
+
+            <p class="outline">試作したコンテンツや写真など。</p>
+
+            <select id="sectionChoice" class="selector">
+                <option value="">コンテンツを選択</option>
+                <option value="#randomQuote">ランダム引用集</option>
+                <option value="#playlist">Spotifyプレイリスト</option>
+                <option value="#visit">Visit</option>
+            </select>
+
+            <section id="randomQuote" class="section">
+                <div class="quote-box">
+                    <h2 class="content-title" id="quoteTitle">ランダム引用集</h2>
+                    <p id="quote"></p>
+                    <p id="author"></p>
+                    <p id="source"></p>
+                    <button type="button" id="reloadQuote">シャッフルする</button>
+                </div>
+            </section>
+            
+            <section id="playlist" class="section">
+                <h2 class="content-title">Spotifyプレイリスト</h2>
+                <div class="playlist-flex">
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1VgfOobgFB3uqm62tO7njA?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7gT6QI6d47NEM6mmLCwePp?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6vH4AtvwSI9SA16JvahekV?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </section>
+            
+            <section id="visit" class="section">
+                <h2 class="content-title">Visit</h2>
+                <div class="other-content">
+                    <div class="gallery" id="ToyamaTrip">
+                        <h3 class="series-title">富山</h3>
+                        <ul class="gallery-list">
+                            <li><img src="../../img/gallery/Toyama-1.jpg" alt="富山-1"></li>
+                            <li><img src="../../img/gallery/Toyama-2.jpg" alt="富山-2"></li>
+                            <li><img src="../../img/gallery/Toyama-3.JPG" alt="富山-3"></li>
+                            <li><img src="../../img/gallery/Toyama-4.jpg" alt="富山-4"></li>
+                            <li><img src="../../img/gallery/Toyama-5.jpg" alt="富山-5"></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer">
+            <p>&copy; 2025 O.G.</p>
+        </footer>
+    </div>
+    
+    <script src="../javascript/index.js"></script>
+</body>
+
+</html>

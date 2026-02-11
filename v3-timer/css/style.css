@@ -1,0 +1,293 @@
+@charset "UTF-8";
+
+/* ====================
+Common
+==================== */
+html {
+    font-size: 100%;
+}
+body {
+    background-color: #eaf4fc;      
+    font-size: 0.875rem;
+    font-family: "Zen Maru Gothic", sans-serif;
+    color: #333631;                 
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    opacity: 0.6;
+}
+li {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+#header .site-title {
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+}
+#header ul {
+    display: flex;
+    gap: 30px;
+    padding: 0 10px;
+}
+#header li a {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+#footer {
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 30px 0;
+}
+
+
+
+/* ====================
+Layout
+==================== */
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.section {
+    padding-bottom: 50px;
+    border-bottom: 2px dotted #333631;
+    margin-bottom: 40px;
+}
+
+
+
+/* ====================
+Component
+==================== */
+/*--- 見出し ---*/
+.page-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.content-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.series-title {
+    /* 下線をテキスト幅に合わせる */
+    display: inline-block;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #333631;
+    margin-bottom: 20px;
+}
+
+/*--- コンテンツ ---*/
+.gallery {
+    margin-bottom: 60px;
+}
+.gallery-list {
+    display: flex;
+    row-gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.gallery-list li {
+    width: 49%;
+}
+.gallery img {
+    border-radius: 5px;
+}
+
+/* ====================
+Pages
+==================== */
+/*--- index ---*/
+.marquee {      /* テキストをスクロールするアニメーション */
+    padding: 50px 0 80px;
+    margin: 0 80px;
+    overflow: hidden;
+}
+.marquee-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    display: inline-block;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: marquee 18s linear infinite;
+}
+@keyframes marquee {
+    0% { transform: translate(0%); }
+    100% { transform: translate(-100%); }
+}
+
+.menu-image {
+    border-radius: 10px;
+}
+#index .section:hover .content-title,     
+.section:hover .image-link {
+    /* .content-titleとimage-linkいずれかにホバーすると両方変化 */
+    opacity: 0.7;
+}
+#index .menu-item:last-child .section {
+    /* 最後の.sectionには下線を引かない */
+    border-bottom: none;
+    color: #333631;
+}
+
+/*--- 3dModels ---*/
+.outline {
+    /* テキストは中央に配置し改行時に先頭文字を左揃え */
+    width: fit-content;
+    font-size: 1rem;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.selector {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    border: 2px solid;
+    border-radius: 2px;
+    appearance: menulist;
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+
+/*--- other ---*/
+#other .section:last-child {
+    /* 最後の.sectionには下線を引かない */
+    border-bottom: none;
+}
+.other-content {
+    padding-left: 5px;
+}
+
+/* --- other > quote --- */
+.quote-box {
+    font-family: "New Tegomin";
+    padding: 40px;
+    border: 2px solid #333631;
+    background-image: url(../../img/washiBG.jpg);
+    margin: 70px 80px 40px;
+}
+.quote-box button {
+    display: block;
+    margin: 20px auto 0;
+    font-family: "Zen Maru Gothic";
+    color: #333631;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid #333631;
+    border-radius: 18px;
+    background-color: #ffffff;
+    padding: 8px 20px;
+}
+.quote-box button:hover {
+    opacity: 0.8;
+}
+.quote-box button:active {
+    opacity: 0.6;
+}
+#quote {
+    /* JSONファイルの/nを改行に変換 */
+    white-space: pre-line;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+#author {
+    display: inline-block;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+#source {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding-left: 20px;
+    color: #656b61;
+}
+
+/*--- other > playlist ---*/
+.playlist-flex {
+    display: flex;
+    height: 500px;
+    justify-content: space-between;
+    padding: 10px 20px 30px;
+}
+.playlist-flex iframe {
+    width: 30%;
+    height: 100%;
+}
+
+/*--- other > gallery ---*/
+#visit .gallery {
+    margin-bottom: 0;
+}
+
+
+
+/* ====================
+RWD
+==================== */
+@media screen and (max-width: 1024px) {
+    .gallery-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 15px;
+    }
+    .gallery-list li {
+        flex: 0 0 80%;
+    }
+    .playlist-flex {
+        flex-direction: column;
+        height: 550px;
+        padding: 10px 10px 0;
+    }
+    .playlist-flex iframe {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #header {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #header ul {
+        /* navを縦並びにする */
+        flex-direction: column;
+        gap: 10px;
+    }
+    #header li a {
+        font-size: 0.9rem;
+    }
+    .quote-box {
+        padding: 30px 23px;
+        margin: 30px 10px 10px;
+    }
+    #author {
+        margin-bottom: 5px;
+    }
+    .page-title {
+        font-size: 1.7rem;
+    }
+    .gallery {
+        margin-bottom: 40px;
+    }
+    .gallery .content-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+}

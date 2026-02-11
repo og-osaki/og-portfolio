@@ -109,6 +109,8 @@ Component
     border-radius: 5px;
 }
 
+
+
 /* ====================
 Pages
 ==================== */
@@ -173,15 +175,22 @@ Pages
     padding-left: 5px;
 }
 
-/* --- other > quote --- */
-.quote-box {
-    font-family: "New Tegomin";
-    padding: 40px;
-    border: 2px solid #333631;
-    background-image: url(../../img/washiBG.jpg);
-    margin: 70px 80px 40px;
+/* other > timer(react) */
+#timer .outline {
+    margin: 0 10px 40px;
 }
-.quote-box button {
+.timer-inner {
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    width: 80%;
+    border-radius: 15px;
+    background-color: #333631;
+    padding: 20px;
+    margin: 40px auto;
+}
+.reload-btn {
     display: block;
     margin: 20px auto 0;
     font-family: "Zen Maru Gothic";
@@ -192,6 +201,15 @@ Pages
     border-radius: 18px;
     background-color: #ffffff;
     padding: 8px 20px;
+}
+
+/* --- other > quote --- */
+.quote-box {
+    font-family: "New Tegomin";
+    padding: 40px;
+    border: 2px solid #333631;
+    background-image: url(../../img/washiBG.jpg);
+    margin: 70px 80px 40px;
 }
 .quote-box button:hover {
     opacity: 0.8;
@@ -231,11 +249,6 @@ Pages
     height: 100%;
 }
 
-/*--- other > gallery ---*/
-#visit .gallery {
-    margin-bottom: 0;
-}
-
 
 
 /* ====================
@@ -273,6 +286,10 @@ RWD
     #header li a {
         font-size: 0.9rem;
     }
+    .marquee {
+        padding: 30px 0 40px;
+        margin: 0 20px;
+    }
     .quote-box {
         padding: 30px 23px;
         margin: 30px 10px 10px;
@@ -289,5 +306,16 @@ RWD
     .gallery .content-title {
         font-size: 1.2rem;
         margin-bottom: 10px;
+    }
+    .timer-inner {
+        font-family: "Press Start 2P", sans-serif;
+        font-size: 1.9rem;
+        color: white;
+        text-align: center;
+        width: 100%;
+        border-radius: 15px;
+        background-color: #333631;
+        padding: 20px;
+        margin: 40px auto;
     }
 }

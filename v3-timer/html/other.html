@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=New+Tegomin&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=New+Tegomin&family=Press+Start+2P&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 </head>
 
 <body id="other">
@@ -35,10 +35,14 @@
 
             <select id="sectionChoice" class="selector">
                 <option value="">コンテンツを選択</option>
+                <option value="#timer">30分立ち上がりタイマー</option>
                 <option value="#randomQuote">ランダム引用集</option>
                 <option value="#playlist">Spotifyプレイリスト</option>
-                <option value="#visit">Visit</option>
             </select>
+
+            <section id="timer" class="section">
+                <div id="react-timer"></div>
+            </section>
 
             <section id="randomQuote" class="section">
                 <div class="quote-box">
@@ -46,7 +50,7 @@
                     <p id="quote"></p>
                     <p id="author"></p>
                     <p id="source"></p>
-                    <button type="button" id="reloadQuote">シャッフルする</button>
+                    <button type="button" id="reloadQuote" class="reload-btn">シャッフルする</button>
                 </div>
             </section>
             
@@ -58,22 +62,6 @@
                     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6vH4AtvwSI9SA16JvahekV?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
             </section>
-            
-            <section id="visit" class="section">
-                <h2 class="content-title">Visit</h2>
-                <div class="other-content">
-                    <div class="gallery" id="ToyamaTrip">
-                        <h3 class="series-title">富山</h3>
-                        <ul class="gallery-list">
-                            <li><img src="../../img/gallery/Toyama-1.jpg" alt="富山-1"></li>
-                            <li><img src="../../img/gallery/Toyama-2.jpg" alt="富山-2"></li>
-                            <li><img src="../../img/gallery/Toyama-3.JPG" alt="富山-3"></li>
-                            <li><img src="../../img/gallery/Toyama-4.jpg" alt="富山-4"></li>
-                            <li><img src="../../img/gallery/Toyama-5.jpg" alt="富山-5"></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <footer id="footer">
@@ -82,6 +70,7 @@
     </div>
     
     <script src="../javascript/index.js"></script>
+    <script type="module" src="../../react-timer/react-timer/dist/assets/index-B_RSoLwt.js"></script>
 </body>
 
 </html>

@@ -1,10 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Timer from './Timer.jsx'
+import App from './App.jsx'
 
+/* reactと導入先htmlで同じidとしてある */
 createRoot(document.getElementById('react-timer')).render(
   <StrictMode>
-    <Timer />
+    <App />
   </StrictMode>,
 )

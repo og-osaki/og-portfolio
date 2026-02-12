@@ -108,6 +108,18 @@ Component
 .gallery img {
     border-radius: 5px;
 }
+.reload-btn {
+    display: block;
+    margin: 20px auto 0;
+    font-family: "Zen Maru Gothic";
+    color: #333631;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid #333631;
+    border-radius: 18px;
+    background-color: #ffffff;
+    padding: 8px 20px;
+}
 
 
 
@@ -190,17 +202,37 @@ Pages
     padding: 20px;
     margin: 40px auto;
 }
-.reload-btn {
-    display: block;
-    margin: 20px auto 0;
-    font-family: "Zen Maru Gothic";
+.timer-btn-flex {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+#timer .reload-btn {
+    margin: 20px 0;
+}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    background: white;
+    padding: 30px 150px;
+    border-radius: 3px;
+    text-align: center;
+}
+.modal button {
+    margin: 20px 0 0;
+    border: 1px solid #656b61;
     color: #333631;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border: 1px solid #333631;
-    border-radius: 18px;
-    background-color: #ffffff;
-    padding: 8px 20px;
+    border-radius: 2px;
+    padding: 3px 8px;
 }
 
 /* --- other > quote --- */
@@ -306,6 +338,14 @@ RWD
     .gallery .content-title {
         font-size: 1.2rem;
         margin-bottom: 10px;
+    }
+    .timer-btn-flex {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+    #timer .reload-btn {
+        margin: 0;
     }
     .timer-inner {
         font-family: "Press Start 2P", sans-serif;

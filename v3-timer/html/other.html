@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=New+Tegomin&family=Press+Start+2P&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 
 <body id="other">
@@ -45,17 +46,22 @@
             </section>
 
             <section id="randomQuote" class="section">
+                <h2 class="content-title" id="quoteTitle">ランダム引用集</h2>
+                <p class="outline">雑多なテキストから拾った引用集です。</p>
+                
                 <div class="quote-box">
-                    <h2 class="content-title" id="quoteTitle">ランダム引用集</h2>
                     <p id="quote"></p>
-                    <p id="author"></p>
-                    <p id="source"></p>
+                    <div class="author-source">
+                        <p id="author"></p>
+                        <p id="source"></p>
+                    </div>
                     <button type="button" id="reloadQuote" class="reload-btn">シャッフルする</button>
                 </div>
             </section>
             
             <section id="playlist" class="section">
                 <h2 class="content-title">Spotifyプレイリスト</h2>
+                
                 <div class="playlist-flex">
                     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1VgfOobgFB3uqm62tO7njA?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7gT6QI6d47NEM6mmLCwePp?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -70,7 +76,7 @@
     </div>
     
     <script src="../javascript/index.js"></script>
-    <script type="module" src="../../react-timer/react-timer/dist/assets/index-BhTgPlEz.js"></script>
+    <script type="module" src="../../react-timer/react-timer/dist/assets/index-D6ERjiCV.js"></script>
 </body>
 
 </html>

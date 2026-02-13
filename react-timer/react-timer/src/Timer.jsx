@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from 'react';
 
 function Timer() {
 
-    const max = 5; /* テスト用 */
+    const max = 30 * 60;
 
     const [rem, setRem] = useState(() => {
 
-        const savedStart = sessionStorage.getItem("rem");
+        const savedStart = localStorage.getItem("rem");
         return savedStart ? Number(savedStart) : max;
     });
 
@@ -26,7 +26,7 @@ function Timer() {
                 if(r <= 1) {
                     clearInterval(intervalRef.current);
                     setIsRunning(false);
-                    sessionStorage.removeItem("rem");
+                    localStorage.removeItem("rem");
 
                     setShowModal(true);
 
@@ -39,7 +39,7 @@ function Timer() {
                 }
 
                 const updated = r - 1;
-                sessionStorage.setItem("rem", updated);
+                localStorage.setItem("rem", updated);
                 return updated;
             });
         }, 1000);
@@ -67,7 +67,7 @@ function Timer() {
     const handleReset = () => {
         setIsRunning(false);
         setRem(max);
-        sessionStorage.setItem("rem", max);
+        localStorage.setItem("rem", max);
     };
 
     const minutes = Math.floor(rem / 60);
@@ -79,13 +79,17 @@ function Timer() {
     return(
         <div className="timer-box">
             <h3 className="content-title">30分立ち上がりタイマー</h3>
-            <p className="outline">集中しているとついつい座りっぱなしに。30分経過したら通知が出ます。</p>
+            <p className="outline">集中しているとついつい座りっぱなしに。30分経過したら通知が出ます。<br/>※現在通知機能はPCのみです。</p>
             <p className="timer-inner">{formatMinutes} : {formatSeconds}</p>
 
             <div className="timer-btn-flex">
-                <button onClick={handleStart} className="reload-btn" id="startBtn">スタート</button>
-                <button onClick={handleStop} className="reload-btn" id="stopBtn">ストップ</button>
-                <button onClick={handleReset} className="reload-btn" id="resetBtn">リセット</button>
+                <button onClick={handleStart} className="reload-btn start-btn">
+                    <span className="material-icons-round">play_arrow</span>
+                </button>
+                <button onClick={handleStop} className="reload-btn stop-btn">
+                    <span className="material-icons-round">pause</span>
+                </button>
+                <button onClick={handleReset} className="reload-btn reset-btn">リセット</button>
             </div>
 
             {/* モーダル */}

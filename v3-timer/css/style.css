@@ -246,6 +246,7 @@ Pages
 }
 .quote-box .reload-btn {
     display: block;
+    padding: 12px 20px;
     margin: 0 auto;
 }
 .quote-box button:hover {

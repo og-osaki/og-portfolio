@@ -1,0 +1,452 @@
+@charset "UTF-8";
+
+/* ====================
+Common
+==================== */
+html {
+    font-size: 100%;
+}
+body {
+    background-color: #eaf4fc;      
+    font-size: 0.875rem;
+    font-family: "Zen Maru Gothic", sans-serif;
+    color: #333631;                 
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    opacity: 0.6;
+}
+li {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+#header .site-title {
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+}
+#header ul {
+    display: flex;
+    gap: 30px;
+    padding: 0 10px;
+}
+#header li a {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+#footer {
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 30px 0;
+}
+button:hover {
+    opacity: 0.8;
+}
+button:active {
+    opacity: 0.6;
+}
+input, textarea {
+    font-size: 0.8rem;
+    border: 1px solid;
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0 0;
+}
+
+
+
+/* ====================
+Layout
+==================== */
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.section {
+    padding-bottom: 50px;
+    border-bottom: 2px dotted #333631;
+    margin-bottom: 40px;
+}
+.btn-flex {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+/* ====================
+Component
+==================== */
+/*--- 見出し ---*/
+.page-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.content-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.series-title {
+    /* 下線をテキスト幅に合わせる */
+    display: inline-block;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #333631;
+    margin-bottom: 20px;
+}
+
+/*--- コンテンツ ---*/
+.btn-general {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 30px 0 0;
+    border: 1px solid #656b61;
+    color: #333631;
+    border-radius: 2px;
+    padding: 3px 18px;
+}
+.gallery {
+    margin-bottom: 60px;
+}
+.gallery-list {
+    display: flex;
+    row-gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.gallery-list li {
+    width: 49%;
+}
+.gallery img {
+    border-radius: 5px;
+}
+.reload-btn {
+    font-family: "Zen Maru Gothic";
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #333631;
+    line-height: 1;
+    padding: 8px 20px;
+    border: 1px solid #333631;
+    border-radius: 18px;
+    background-color: #ffffff;
+}
+
+
+
+/* ====================
+Pages
+==================== */
+/*--- index ---*/
+.marquee {      /* テキストをスクロールするアニメーション */
+    padding: 50px 0 80px;
+    margin: 0 80px;
+    overflow: hidden;
+}
+.marquee-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    display: inline-block;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: marquee 18s linear infinite;
+}
+@keyframes marquee {
+    0% { transform: translate(0%); }
+    100% { transform: translate(-100%); }
+}
+
+.menu-image {
+    border-radius: 10px;
+}
+#index .section:hover .content-title,     
+.section:hover .image-link {
+    /* .content-titleとimage-linkいずれかにホバーすると両方変化 */
+    opacity: 0.7;
+}
+#index .menu-item:last-child .section {
+    /* 最後の.sectionには下線を引かない */
+    border-bottom: none;
+    color: #333631;
+}
+
+/*--- 3dModels ---*/
+.outline {
+    /* テキストは中央に配置し改行時に先頭文字を左揃え */
+    width: fit-content;
+    font-size: 1rem;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.selector {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    border: 2px solid;
+    border-radius: 2px;
+    appearance: menulist;
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+
+/*--- other ---*/
+#other .section:last-child {
+    /* 最後の.sectionには下線を引かない */
+    border-bottom: none;
+}
+.other-content {
+    padding-left: 5px;
+}
+
+/* other > timer(react) */
+#timer .outline {
+    margin: 0 10px 40px;
+}
+.timer-inner {
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 3.5rem;
+    color: white;
+    text-align: center;
+    width: 70%;
+    border-radius: 2px;
+    background-color: black;
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    user-select: none;
+}
+.timer-btn-flex {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    font-size: 1.2rem;
+    background: #eaf4fc;
+    padding: 50px 120px;
+    border: 5px solid #2a83a2;
+    border-radius: 2px;
+    text-align: center;
+}
+
+/* --- other > quote --- */
+#randomQuote .outline {
+    margin: 0 10px 40px;
+}
+.quote-box {
+    font-family: "New Tegomin";
+    padding: 40px;
+    border: 2px solid #333631;
+    background-image: url(../../img/washiBG.jpg);
+    margin: 0 80px 40px;
+}
+.quote-box .reload-btn {
+    display: block;
+    padding: 12px 20px;
+}
+#quote {
+    /* JSONファイルの/nを改行に変換 */
+    white-space: pre-line;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+#author {
+    display: inline-block;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+#source {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding-left: 20px;
+    color: #656b61;
+    margin-bottom: 30px;
+}
+#openModal {
+    color: white;
+    background-color: #333631;
+}
+#loginModal {
+    display: none;
+}
+.close-button {
+    color: white;
+    position: absolute;
+    right: 50px; 
+    top: 30px;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+/*--- other > playlist ---*/
+.playlist-flex {
+    display: flex;
+    height: 500px;
+    justify-content: space-between;
+    padding: 10px 20px 0;
+}
+.playlist-flex iframe {
+    width: 30%;
+    height: 100%;
+}
+
+/*--- edit.php ---*/
+#editPage {
+    text-align: center;
+    margin: 100px auto;
+}
+#addQuote label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+#addQuote input, textarea {
+    margin: 0 0 20px;
+}
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.alert.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+.alert.alert-failure {
+    background: #f8d7da;
+    color: #721c24;
+}
+#alertBox .material-icons-round {
+    font-size: 1.2rem;
+    padding-bottom: 3px;
+}
+
+/*--- edit.php > 備考ボタン ---*/
+#addQuote .material-icons-round[data-tooltip] {
+    color: #2a83a2;
+    font-size: 1rem;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: help;
+    margin-left: 5px;
+    padding-bottom: 4px;
+}
+#addQuote .material-icons-round[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333631e6;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    width: 300px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+#addQuote .material-icons-round[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+/* ====================
+RWD
+==================== */
+@media screen and (max-width: 1024px) {
+    .gallery-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 15px;
+    }
+    .gallery-list li {
+        flex: 0 0 80%;
+    }
+    .playlist-flex {
+        flex-direction: column;
+        height: 550px;
+        padding: 10px 10px 0;
+    }
+    .playlist-flex iframe {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #header {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #header ul {
+        /* navを縦並びにする */
+        flex-direction: column;
+        gap: 10px;
+    }
+    #header li a {
+        font-size: 0.9rem;
+    }
+    .marquee {
+        padding: 30px 0 40px;
+        margin: 0 20px;
+    }
+    .quote-box {
+        padding: 30px 23px;
+        margin: 30px 10px 10px;
+    }
+    #author {
+        margin-bottom: 5px;
+    }
+    .page-title {
+        font-size: 1.7rem;
+    }
+    .gallery {
+        margin-bottom: 40px;
+    }
+    .gallery .content-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    .timer-inner {
+        font-size: 1.9rem;
+        width: 100%;
+        margin: 40px auto;
+    }
+    .modal {
+        font-size: 1rem;
+        padding: 50px 60px;
+    }
+}

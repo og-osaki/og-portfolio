@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ</title>
+    <meta name="description" content="OGのポートフォリオです。Blender作品や雑多なコンテンツを掲載しています。">
+    <link rel="icon" href="../../img/favicon.ico"> 
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=New+Tegomin&family=Press+Start+2P&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+
+<body id="other">
+    <div class="wrapper">
+        <header id="header">
+            <h1 class="site-title">
+                <a href="index.html" id="site-title-text">O.G.</a>
+            </h1>
+            
+            <nav>
+                <ul>
+                    <li><a href="3dModels.html">3D MODELS</a></li>
+                    <li><a href="other.html">OTHER</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2 class="page-title">Other</h2>
+
+            <p class="outline">試作したコンテンツなど。</p>
+
+            <select id="sectionChoice" class="selector">
+                <option value="">コンテンツを選択</option>
+                <option value="#timer">30分立ち上がりタイマー</option>
+                <option value="#randomQuote">ランダム引用集</option>
+                <option value="#playlist">Spotifyプレイリスト</option>
+            </select>
+
+            <section id="timer" class="section">
+                <div id="react-timer"></div>
+            </section>
+
+            <section id="randomQuote" class="section">
+                <h2 class="content-title" id="quoteTitle">ランダム引用集</h2>
+                <p class="outline">雑多なテキストから拾った引用集です。</p>
+                
+                <div class="quote-box">
+                    <p id="quote"></p>
+                    <div class="author-source">
+                        <p id="author"></p>
+                        <p id="source"></p>
+                    </div>
+                    <div class="btn-flex">
+                        <button type="button" id="reloadQuote" class="reload-btn">シャッフル</button>
+                        <button type="button" id="openModal" class="reload-btn">管理者ログイン</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="playlist" class="section">
+                <h2 class="content-title">Spotifyプレイリスト</h2>
+                
+                <div class="playlist-flex">
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1VgfOobgFB3uqm62tO7njA?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7gT6QI6d47NEM6mmLCwePp?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6vH4AtvwSI9SA16JvahekV?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer">
+            <p>&copy; 2025 O.G.</p>
+        </footer>
+    </div>
+
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal">
+            <span class="close-button">&times;</span>
+            <h2>管理者ログイン(編集画面)</h2>
+            <form action="../php/login.php" method="POST" target="_blank">
+                <input type="text" name="username" id="username" placeholder="ユーザー名" required>
+                <input type="password" name="password" id="password" placeholder="パスワード" required>
+                <button type="submit" class="btn-general" onclick="closeModalAfterLogin()">ログイン</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../javascript/index.js"></script>
+    <script type="module" src="../../react-timer/react-timer/dist/assets/index-D6ERjiCV.js"></script>
+</body>
+
+</html>

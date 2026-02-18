@@ -50,34 +50,26 @@ if(selectSection){                         /* 存在するページでのみ動�
 }
 
 /*-----------------------------------------------------
-JSONファイルから引用データの取得
+DBから引用データの取得
 -----------------------------------------------------*/
-
-let lastIndex = -1;                 /* 同じ引用が連続で出るのを防止 */
 
 function loadQuote() {
   const quote = document.getElementById("quote");
   const author = document.getElementById("author");
   const source = document.getElementById("source");
 
-  let randomIndex;
-
   if(quote && author && source) {
-    fetch("../javascript/quoteData.json")
-    .then(response => response.json())
-    .then(data => {
-      do {
-        randomIndex = Math.floor(Math.random() * data.length);
-      } while (randomIndex === lastIndex);
-
-      lastIndex = randomIndex;
-
-      const item = data[randomIndex];
-
-      quote.textContent = `” ${item.quote} ”`;
-      author.textContent = `- ${item.author}`;
-      source.textContent = item.source;
-    });
+    fetch("../php/get-quote.php")
+    .then(response => {
+        if(!response.ok) throw new Error('ネットワークエラー');
+        return response.json();
+    })
+    .then(item => {
+      quote.innerText = `” ${item.quote} ”`;
+      author.innerText = `- ${item.author}`;
+      source.innerText = item.source;
+    })
+    .catch(error => console.error("データの取得に失敗しました:", error));
   };
 }
 
@@ -89,4 +81,51 @@ loadQuote();
 
 const reloadQuote = document.getElementById("reloadQuote");
 
-reloadQuote.addEventListener("click", loadQuote);
+if(reloadQuote) {
+    reloadQuote.addEventListener("click", loadQuote);
+}
+
+
+/*-----------------------------------------------------
+管理者ログインモーダル
+-----------------------------------------------------*/
+const modal = document.getElementById("loginModal");
+const overlay = document.querySelector('.modal-overlay');
+const openModal = document.getElementById("openModal");
+const closeBtn = document.querySelector(".close-button");
+
+// 「管理者ログイン」ボタンをクリックしたら表示
+openModal.onclick = function() {
+    modal.style.display = "flex";
+}
+
+// ×をクリックしたら非表示
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// 暗い部分をクリックしても閉じるようにする
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// ログイン後モーダルを閉じフォームを空にする
+function closeModalAfterLogin() {
+    
+    setTimeout(() => {
+        
+        if (modal) {
+            modal.style.display = 'none';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        }
+        
+        if (overlay) {
+            overlay.style.display = 'none';
+        }
+
+
+    }, 500);        /* 時間をずらして確実に送信できるようにする */
+}

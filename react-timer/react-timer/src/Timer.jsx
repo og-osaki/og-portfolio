@@ -97,7 +97,7 @@ function Timer() {
                 <div className="modal-overlay">
                     <div className="modal">
                         <h3>30分経過しました。立ち上がって休憩しましょう🕺</h3>
-                        <button onClick={() => setShowModal(false)}>閉じる</button>
+                        <button className="btn-general" onClick={() => setShowModal(false)}>閉じる</button>
                     </div>
                 </div>
             )}

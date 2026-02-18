@@ -51,7 +51,7 @@
                 <form action="add-quote.php" method="POST">
                     <div>
                         <label for="quoteAdded">引用文</label>
-                        <textarea name="quotea" id="quoteAdded" required></textarea>
+                        <textarea name="quote" id="quoteAdded" required></textarea>
                     </div>
                     <div>
                         <label for="authorAdded">著者</label>

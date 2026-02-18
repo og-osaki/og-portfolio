@@ -1,7 +1,7 @@
 # OG Portfolio
 
 ## 概要
-これまでのプログラミング学習のまとめとして作成したポートフォリオサイトです。主なコンテンツとして、Blenderで作成した3Dモデルやjson、Reactを活用した機能を掲載しています。
+これまでのプログラミング学習のまとめとして作成したポートフォリオサイトです。主なコンテンツとして、Blenderで作成した3DモデルやJSON、Reactを活用した機能を掲載しています。
 
 ## URL
 ※現時点ではローカル環境での確認を想定しています。
@@ -13,7 +13,7 @@
 ├─react-timer               *React編集用ソース           
 ├─v3-timer                  *JSON版ランダム引用集 + 30分タイマー
 └─v4-php                    *php + MySQL版（簡易CMS）
-  └── database-sample.php   *DB設定サンプル（本体はgitignore）
+  └── database-sample.php   *DB設定サンプル（本体はパスワードを含むためgitignore）
 ```
 
 ## php版サンプル画面

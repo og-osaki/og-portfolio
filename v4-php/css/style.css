@@ -136,7 +136,7 @@ Component
     border-radius: 5px;
 }
 .reload-btn {
-    font-family: "Zen Maru Gothic";
+    font-family: "Zen Maru Gothic", sans-serif;
     font-size: 0.8rem;
     font-weight: bold;
     color: #333631;
@@ -201,7 +201,6 @@ Pages
     border: 2px solid;
     border-radius: 2px;
     appearance: menulist;
-    font-family: "Zen Maru Gothic", sans-serif;
 }
 
 /*--- other ---*/
@@ -364,10 +363,11 @@ Pages
     left: 50%;
     transform: translateX(-50%);
     background-color: #333631e6;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: 0.9rem;
     color: #fff;
     padding: 8px 12px;
     border-radius: 4px;
-    font-size: 0.9rem;
     line-height: 1.5;
     white-space: pre-wrap;
     width: 300px;
@@ -375,7 +375,6 @@ Pages
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
-    font-family: "Zen Maru Gothic", sans-serif;
 }
 #addQuote .material-icons-round[data-tooltip]:hover::after {
     opacity: 1;

@@ -22,16 +22,19 @@
 
 ### 2. 引用集
 データベースからランダムに取得したコンテンツを表示します(※v3ではJSONから取得)。「シャッフル」ボタンを押すと内容が更新されます。
+
 <img src="./img/sample/quote-page.png" alt="ランダム引用集" width="500" display="block">
 
 ### 3. 編集画面
 「管理者ログイン」ボタンを押すとログイン用モーダルが表示されます。ログインに成功すると、編集画面に遷移します。ここでテキストを入力します。
-<img src="./img/sample/login-page.png" alt="ログイン画面" width="500" display="block">
 
-<img src="./img/sample/edit-page.png" alt="管理者編集画面" width="500" display="block">
+<img src="./img/sample/login-page.png" alt="ログイン画面" width="500">
+
+<img src="./img/sample/edit-page.png" alt="管理者編集画面" width="500">
 
 ### 4. 結果通知
 無事追加されると編集画面に戻り結果が表示されます。なんらかのエラーが出ると赤く表示されます。
+
 <img src="./img/sample/edit-success.png" alt="追加成功" width="45%">
 <img src="./img/sample/edit-failure.png" alt="エラー" width="45%">
 

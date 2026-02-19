@@ -4,13 +4,17 @@
 これまでのプログラミング学習のまとめとして作成したポートフォリオサイトです。主なコンテンツとして、Blenderで作成した3DモデルやJSON、Reactを活用した機能を掲載しています。
 
 ## URL
+https://og-osaki.github.io/og-portfolio/
 (Github Pages)
 
 ## 構成
 ```text
+├─css
+├─html
 ├─img                       *画像アセット
+├─javascript                      
 ├─react-timer/dist          *Reactファイル          
-└─v3-timer                  *JSON版ランダム引用集 + 30分タイマー
+└─index.html                 
 ```
 
 ## 使用技術

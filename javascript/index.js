@@ -63,7 +63,7 @@ function loadQuote() {
   let randomIndex;
 
   if(quote && author && source) {
-    fetch("../quoteData.json")
+    fetch("../javascript/quoteData.json")
     .then(response => response.json())
     .then(data => {
       do {

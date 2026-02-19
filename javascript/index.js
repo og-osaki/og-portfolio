@@ -89,4 +89,6 @@ loadQuote();
 
 const reloadQuote = document.getElementById("reloadQuote");
 
-reloadQuote.addEventListener("click", loadQuote);
+if(reloadQuote) {
+    reloadQuote.addEventListener("click", loadQuote);
+}

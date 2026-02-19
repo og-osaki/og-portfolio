@@ -5,7 +5,7 @@
 
 ## URL
 https://og-osaki.github.io/og-portfolio/
-(Github Pages)
+(GitHub Pages)
 
 ## 構成
 ```text

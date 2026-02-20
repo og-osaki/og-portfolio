@@ -34,7 +34,11 @@ const selectModel = document.getElementById("modelChoice");
 if(selectModel){                         /* 存在するページでのみ動作（後続コードの停止を防ぐ） */
   selectModel.addEventListener("change", function() {
     if(selectModel.value) {
-      location.hash = selectModel.value;
+
+      const target = document.querySelector(selectModel.value);
+      if(target) {
+        target.scrollIntoView({behavior: "smooth"});
+      }
     }
   });
 }
@@ -44,7 +48,6 @@ const selectSection = document.getElementById("sectionChoice");
 if(selectSection){                         /* 存在するページでのみ動作（後続コードの停止を防ぐ） */
   selectSection.addEventListener("change", function() {
     if(selectSection.value) {
-      /* location.hash = selectSection.value; */
 
       const target = document.querySelector(selectSection.value);
       if(target) {

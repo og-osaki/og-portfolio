@@ -49,7 +49,7 @@ if(selectSection){                         /* 存在するページでのみ動�
   selectSection.addEventListener("change", function() {
     if(selectSection.value) {
 
-      const target = document.querySelector(selectSelection.value);
+      const target = document.querySelector(selectSection.value);
       if(target) {
         target.scrollIntoView({behavior: "smooth"});
       }
